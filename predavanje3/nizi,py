@@ -1,0 +1,63 @@
+def funkcija():
+    return 42, 43
+
+
+a, b = funkcija()
+
+
+def break_continue(n):
+    for i in range(n):
+        if i == 3:
+            continue
+        if i == 10:
+            break
+
+        print(i**2)
+
+
+def je_samoglasnik(crka):
+    return crka in "aeiouAEIOU"
+
+
+def stevilo_samoglasnikov(niz):
+    """Funkcija prejme niz in presteje
+    stevilo samoglasnikov v njej."""
+    stevec = 0
+
+    for i in range(len(niz)):
+        crka = niz[i]
+
+        if je_samoglasnik(crka):
+            stevec += 1
+
+    return stevec
+
+
+def risi_smrecico(n):
+    for i in range(1, n + 1):
+        print((n - i) * " " + (2 * i - 1) * "*")
+
+
+def risi_kvadrat(n):
+    print(" " + n * "-" + " ")
+
+    for _ in range(n):
+        print("|" + n * " " + "|")
+
+    print(" " + n * "-" + " ")
+
+
+def implicitni_graf(f, x1, x2, y1, y2, n, m):
+    for i in range(m):
+        for j in range(n):
+            x = x1 + j * (x2 - x1) / n
+            y = y1 + i * (y2 - y1) / m
+            if abs(f(x, y)) < 0.1:
+                print("*", end="")
+            else:
+                print(" ", end="")
+        print("")
+
+
+def kroznica(x, y):
+    return x**2 + y**2 - 1

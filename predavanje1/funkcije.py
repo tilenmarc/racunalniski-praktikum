@@ -1,4 +1,5 @@
 def ploscina_trikotnika(a, b, c):
+    # uporabimo Heronovo formulo
     s = (a + b + c) / 2
     ploscina_trik = (s * (s - a) * (s - b) * (s - c)) ** (1 / 2)
 
